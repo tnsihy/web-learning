@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给slot元素指定一个name后，可以分发多个内容，具名插槽可以与单个插槽共存。</title>
+</head>
+<body>
+    <slot-area>
+        <h2 slot="header">标题</h2>
+        <p slot="footer">底部</p>
+    </slot-area>
+    <script>
+        Vue.component('slot-area',{
+            template:`
+                <div class="main-area">
+                    <div class="header"><slot name="header"></slot></div>
+                    <div class="footer"><slot name="footer"></slot></div>
+                </div>
+            `
+        })
+    </script>
+</body>
+</html>
